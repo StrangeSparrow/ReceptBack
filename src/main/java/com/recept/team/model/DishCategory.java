@@ -1,5 +1,6 @@
 package com.recept.team.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,6 +16,7 @@ public class DishCategory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    @JsonIgnore
     @OneToMany(mappedBy = "category")
     private List<Dish> dishes;
 }
