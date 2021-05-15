@@ -16,9 +16,7 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public List<ProductCategory> getAll() {
-        List<ProductCategory> productCategories = repository.findAll();
-
-        return productCategories;
+        return repository.findAll();
     }
 
     @Override
@@ -30,16 +28,12 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public ProductCategory add(ProductCategory productCategory) {
-        ProductCategory saveProductCategory = repository.save(productCategory);
-
-        return saveProductCategory;
+        return repository.save(productCategory);
     }
 
     @Override
     public ProductCategory update(ProductCategory productCategory) {
-        ProductCategory updateProductCategory = repository.save(productCategory);
-
-        return updateProductCategory;
+        return repository.save(productCategory);
     }
 
     @Override

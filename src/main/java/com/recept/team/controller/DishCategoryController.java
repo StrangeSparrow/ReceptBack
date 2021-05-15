@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("dish_category")
-public class DishCategoryController {
+public class DishCategoryController implements ControllerService<DishCategory> {
     private final DishCategoryService service;
 
     @GetMapping
@@ -26,7 +26,7 @@ public class DishCategoryController {
     public ResponseEntity<DishCategory> getById(@PathVariable("id") int id) {
         DishCategory dishCategory = service.getById(id);
 
-        if(dishCategory == null)
+        if (dishCategory == null)
             return ResponseEntity.badRequest().build();
 
         return ResponseEntity.ok(dishCategory);

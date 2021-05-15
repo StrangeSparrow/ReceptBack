@@ -16,7 +16,7 @@ public class ProductController {
     private final ProductService service;
 
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts() {
+    public ResponseEntity<List<Product>> getAll() {
         List<Product> products = service.getAll();
 
         return ResponseEntity.ok(products);
@@ -26,7 +26,7 @@ public class ProductController {
     public ResponseEntity<Product> getById(@PathVariable("id") int id) {
         Product product = service.getById(id);
 
-        if(product == null)
+        if (product == null)
             return ResponseEntity.badRequest().build();
 
         return ResponseEntity.ok(product);

@@ -16,30 +16,23 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAll() {
-        List<Product> products = repository.findAll();
-
-        return products;
+        return repository.findAll();
     }
 
     @Override
     public Product getById(int id) {
         Optional<Product> product = repository.findById(id);
-
         return product.orElse(null);
     }
 
     @Override
     public Product add(Product product) {
-        product = repository.save(product);
-
-        return product;
+        return repository.save(product);
     }
 
     @Override
     public Product update(Product product) {
-        product = repository.save(product);
-
-        return product;
+        return repository.save(product);
     }
 
     @Override

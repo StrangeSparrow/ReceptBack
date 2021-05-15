@@ -16,9 +16,7 @@ public class DishCategoryServiceImpl implements DishCategoryService {
 
     @Override
     public List<DishCategory> getAll() {
-        List<DishCategory> dishCategories = repository.findAll();
-
-        return dishCategories;
+        return repository.findAll();
     }
 
     @Override
@@ -30,16 +28,12 @@ public class DishCategoryServiceImpl implements DishCategoryService {
 
     @Override
     public DishCategory add(DishCategory dishCategory) {
-        DishCategory saveDishCategory = repository.save(dishCategory);
-
-        return saveDishCategory;
+        return repository.save(dishCategory);
     }
 
     @Override
     public DishCategory update(DishCategory dishCategory) {
-        DishCategory updateDishCategory = repository.save(dishCategory);
-
-        return updateDishCategory;
+        return repository.save(dishCategory);
     }
 
     @Override

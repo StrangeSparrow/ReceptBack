@@ -5,7 +5,6 @@ import com.recept.team.service.ProductCategoryService;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/product_category")
-public class ProductCategoryController {
+public class ProductCategoryController implements ControllerService<ProductCategory> {
     private final ProductCategoryService service;
 
     @GetMapping
@@ -28,7 +27,7 @@ public class ProductCategoryController {
     public ResponseEntity<ProductCategory> getById(@PathVariable("id") int id) {
         ProductCategory productCategory = service.getById(id);
 
-        if(productCategory == null)
+        if (productCategory == null)
             return ResponseEntity.badRequest().build();
 
         return ResponseEntity.status(HttpStatus.OK).body(productCategory);
