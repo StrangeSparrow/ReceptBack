@@ -20,4 +20,9 @@ public class Dish {
     private DishCategory category;
     @OneToMany(mappedBy = "dish")
     private List<Recipe> recipes;
+    @ManyToMany
+    @JoinTable(name = "dish_set",
+            joinColumns = @JoinColumn(name = "dish_id"),
+            inverseJoinColumns = @JoinColumn(name = "menu_id"))
+    private List<Menu> menus;
 }

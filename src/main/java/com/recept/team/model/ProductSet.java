@@ -9,13 +9,13 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "recipe")
-@IdClass(Recipe.RecipePK.class)
-public class Recipe {
+@IdClass(ProductSet.ProductSetPK.class)
+@Table(name = "product_set")
+public class ProductSet {
     @Id
     @ManyToOne
-    @JoinColumn(name = "dish_id")
-    private Dish dish;
+    @JoinColumn(name = "menu_id")
+    private Menu menu;
     @Id
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -24,8 +24,8 @@ public class Recipe {
     @Enumerated(EnumType.STRING)
     private Unit unit;
 
-    public class RecipePK implements Serializable {
-        private Integer dish;
+    public class ProductSetPK implements Serializable {
+        private Integer menu;
         private Integer product;
     }
 }
