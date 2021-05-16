@@ -1,5 +1,6 @@
 package com.recept.team.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +19,7 @@ public class Dish {
     @ManyToOne
     @JoinColumn(name = "category")
     private DishCategory category;
+    @JsonIgnore
     @OneToMany(mappedBy = "dish")
     private List<Recipe> recipes;
     @ManyToMany
