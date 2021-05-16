@@ -1,12 +1,13 @@
 package com.recept.team.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Data
+@Setter
+@Getter
+@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @IdClass(ProductSet.ProductSetPK.class)

@@ -10,9 +10,19 @@ public interface RecipeService {
 
     Recipe getById(RecipePK id);
 
+    List<Recipe> getByDishId(int id);
+
+    List<Recipe> getByProductId(int id);
+
     Recipe add(Recipe recipe);
 
     Recipe update(Recipe recipe);
 
     void delete(RecipePK id);
+
+    void deleteByDishId(int id);
+
+    void deleteByProductId(int id);
+
+    void deleteByDishIdAndProductId(int dishId, int productId);
 }

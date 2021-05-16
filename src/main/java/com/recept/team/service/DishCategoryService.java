@@ -1,11 +1,9 @@
 package com.recept.team.service;
 
 import com.recept.team.model.DishCategory;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface DishCategoryService {
     List<DishCategory> getAll();
 

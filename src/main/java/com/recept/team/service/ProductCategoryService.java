@@ -2,10 +2,8 @@ package com.recept.team.service;
 
 import com.recept.team.model.ProductCategory;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
-@Transactional
 public interface ProductCategoryService {
     List<ProductCategory> getAll();
 

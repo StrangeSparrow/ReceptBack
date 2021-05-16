@@ -28,6 +28,16 @@ public class RecipeServiceImpl implements RecipeService {
     }
 
     @Override
+    public List<Recipe> getByDishId(int id) {
+        return repository.findByDishId(id);
+    }
+
+    @Override
+    public List<Recipe> getByProductId(int id) {
+        return repository.findByProductId(id);
+    }
+
+    @Override
     public Recipe add(Recipe recipe) {
         return repository.save(recipe);
     }
@@ -40,5 +50,20 @@ public class RecipeServiceImpl implements RecipeService {
     @Override
     public void delete(RecipePK id) {
         repository.deleteById(id);
+    }
+
+    @Override
+    public void deleteByDishId(int id) {
+        repository.deleteByDishId(id);
+    }
+
+    @Override
+    public void deleteByProductId(int id) {
+        repository.deleteByProductId(id);
+    }
+
+    @Override
+    public void deleteByDishIdAndProductId(int dishId, int productId) {
+        repository.deleteByDishIdAndProductId(dishId, productId);
     }
 }
