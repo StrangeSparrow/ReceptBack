@@ -1,16 +1,16 @@
 package com.recept.team.model;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
-@Data
+@Setter
+@Getter
+@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @Table(name = "recipe")
-@IdClass(Recipe.RecipePK.class)
+@IdClass(RecipePK.class)
 public class Recipe {
     @Id
     @ManyToOne
@@ -23,9 +23,4 @@ public class Recipe {
     private Integer quantity;
     @Enumerated(EnumType.STRING)
     private Unit unit;
-
-    public class RecipePK implements Serializable {
-        private Integer dish;
-        private Integer product;
-    }
 }
