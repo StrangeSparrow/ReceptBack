@@ -15,6 +15,7 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String name;
     @ManyToMany
     @JoinTable(name = "dish_set",
             joinColumns = @JoinColumn(name = "menu_id"),

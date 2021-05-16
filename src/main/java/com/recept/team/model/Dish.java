@@ -23,6 +23,7 @@ public class Dish {
     @JsonIgnore
     @OneToMany(mappedBy = "dish")
     private List<Recipe> recipes;
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "dish_set",
             joinColumns = @JoinColumn(name = "dish_id"),
